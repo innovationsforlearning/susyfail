@@ -1,4 +1,4 @@
-$ie: false;
+$ie: true;
 
 @import "susy";
 @import "global/variables";
@@ -7,7 +7,7 @@ $ie: false;
 @import "global/headings";
 @import "global/grid";
 
-// BASE ------------------------>
+// ATOMS ------------------------>
 
 @import "base/base";
 @import "base/layout";
@@ -51,11 +51,3 @@ $ie: false;
 @import "vendor/animation";
 @import "vendor/jquery-ui";
 @import "vendor/jquery.ui.draggable";
-
-
-
-
-
-
-
-

@@ -1,0 +1,144 @@
+// @import "global";
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+
+  @include ie {
+    height: auto;
+  }
+}
+
+html {
+  position: relative;
+  font-size: 15px;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  background: rgb(53, 34, 57);
+  color: $text-blue;
+  font: 100%/1.5 $font;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.student {
+    background-image: image-url("student-portal-bg-grass.jpg");
+    background-size: contain;
+    background-color: #246a17;
+  }
+
+  &.application {
+    background: #fff;
+  }
+
+  &.home,
+  &.tutor_session_feedbacks,
+  &.new,
+  &.edit {
+    background-image: image-url("home-bg.jpg");
+    behavior: url(/PIE.htc);
+  }
+
+  &.activities.tutor,
+  &.messages.new,
+  &.messages.index,
+  &.tutor_events.show {
+    background-image: image-url("bg-tutor.jpg");
+  }
+
+  &.info {
+    background-image: image-url("home-bg-blur.jpg");
+  }
+
+  &.stark {
+    font-family: Helvetica, arial, sans-serif;
+    background: $white;
+    color: $black;
+    margin-bottom: 4%;
+    padding: 4%;
+
+    .main {
+      margin-bottom: 10%;
+    }
+
+    h1 {
+      font-family: Helvetica, arial, sans-serif;
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+
+    h2 {
+      font-family: Helvetica, arial, sans-serif;
+      padding-top: 3%;
+    }
+
+    h3 {
+      font-family: Helvetica, arial, sans-serif;
+      padding-top: 3%;
+    }
+
+    ul {
+      font-family: Helvetica, arial, sans-serif;
+      list-style: disc inside;
+      padding: 3% 0;
+    }
+
+    ol {
+      list-style: decimal inside;
+      padding: 3% 0;
+    }
+
+    a {
+      color: $orange;
+
+      &:hover {
+        color: $med-gray;
+      }
+    }
+
+    p {
+      padding-top: 3%;
+    }
+  }
+}
+
+.page {
+  @include container(980px);
+  position: relative;
+  z-index: 102;
+}
+.sg-main,
+.main {
+  @include container($container);
+}
+
+main {
+  height: 100%;
+}
+
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+[role=main] {
+  overflow: hidden;
+}

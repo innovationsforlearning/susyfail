@@ -1,0 +1,290 @@
+// @import "global";
+
+.reading-level-nav {
+  @include full;
+  @include clearfix;
+  padding-top: 0.7%;
+  padding-bottom: 0.7%;
+  border-bottom: 1px solid $wf-gray-light;
+
+
+  h2 {
+    display: inline-block;
+  }
+
+  .levels {
+    margin: 10px 0 0 0;
+    display: inline-block;
+
+    li {
+      background-color: #e0e0e0;
+      display: inline-block;
+      @include border-radius(50%);
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      @include font-size(0.87);
+      line-height: 25px;
+      color: #ffffff;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $orange;
+      }
+    }
+  }
+}
+
+.edit-mode {
+  @extend %delta;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}
+
+.stimuli {
+  @include container(800px center);
+  display: none;
+  margin-bottom: 4%;
+
+  &.active {
+    display: block;
+  }
+  ul {
+
+    &.active {
+      display: block;
+      padding-top: 8%;
+    }
+  }
+}
+
+.stimulus {
+  @include gallery(1 of 8);
+  margin: 0.4em;
+  text-align: center;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 20px; // convert to em
+  cursor: pointer;
+
+  a {
+    background-color: $light-gray;
+    @include border-radius(8px);
+    color: $dark-blue;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+  }
+
+  &.selected,
+  &.on {
+    a {
+      background-color: $dark-blue;
+      color: #ffffff;
+    }
+  }
+
+  .letters & {
+    @include gallery(1 of 13);
+  }
+
+  &[data-assessment="yes"],
+  &[data-assessment="no"] {
+    a {
+      color: $white;
+    }
+  }
+
+  &[data-assessment="yes"] {
+    a {
+      background-color: $correct-bg;
+    }
+  }
+
+  &[data-assessment="no"] {
+    a {
+      background-color: $wrong-bg;
+    }
+  }
+
+  .correct {
+    background: $correct-bg;
+  }
+
+  .wrong {
+    background: $wrong-bg;
+  }
+}
+
+.flashcard-header {
+  padding: 2% 4%;
+  @include break;
+
+  button {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: .3em;
+  }
+
+  .icon-yes-filled,
+  .icon-no-filled {
+    @include font-size(2);
+  }
+
+  .icon-yes-filled {
+    color: $correct-bg;
+  }
+
+  .icon-no-filled {
+    color: $wrong-bg;
+  }
+
+  .onset-rime-words {
+
+    .selected {
+      font-weight: bold;
+      background-color: yellow;
+    }
+  }
+}
+
+.flashcard-text-window {
+  display: none;
+
+  &.active {
+    display: block;
+    @include full;
+    border-bottom: 1px solid $wf-gray-light;
+    overflow: auto;
+    min-height: 112px;
+    padding: 2%;
+
+    p {
+      @include font-size(3.3);
+      color: $orange;
+      font-weight: 600;
+      text-align: center;
+      height: 75px;
+    }
+
+    &.letters,
+    &.sight-words {
+      p {
+        display: inline-block;
+        margin-right: 4%;
+        color: $wf-gray-dark;
+        line-height: 1;
+      }
+    }
+
+    &.onset-rimes {
+      border-bottom: 0;
+      p {
+        display: block;
+        text-align: left;
+      }
+      .assessment-block {
+        @include span(4 of 12);
+        text-align: left;
+      }
+
+
+      .flashcard-rimes-wordlist {
+        @include span(8 at 4 of 12 last);
+        padding-top: 2%;
+
+        ul {
+          li {
+            @include gallery(1 of 6);
+            display: block;
+
+            span {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.flashcard-content {
+  position: relative;
+  padding: 0 4%;
+
+  &.student-content {
+    .selected-stimuli {
+      @include font-size(14);
+      color: $white;
+      text-align: center;
+    }
+  }
+}
+
+.edit-action {
+  @include clearfix;
+
+  a {
+    @include span(2 of 12 no-gutters last);
+    text-align: right;
+    padding-right: 2%;
+    &.activate {
+      display: inline-block;
+    }
+
+    &.deactivate {
+      display: inline-block;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.assessment-block {
+  display: none;
+  text-align: center;
+}
+
+.assessment {
+  display: inline-block;
+  font-family: $font-secondary;
+  vertical-align: text-bottom;
+}
+
+.flashcard-onsets,
+.flashcard-rimes {
+  h2 {
+    padding: 0.4em 0.67em;
+  }
+  ul {
+    display: block;
+  }
+}
+
+.flashcard-onsets {
+  @include span(4 of 12);
+  .stimulus {
+    @include gallery(1 of 5);
+  }
+}
+
+.flashcard-rimes {
+  @include span(8 of 12 last);
+  .stimulus {
+    @include gallery(1 of 8);
+  }
+}
+
+.reading-level-content {
+  padding: 2%;
+
+  
+  h2,
+  p {
+    margin: 2% 0;
+  }
+}

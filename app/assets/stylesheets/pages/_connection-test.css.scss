@@ -1,0 +1,64 @@
+.connection_test {
+  background-color: #ffffff;
+
+  .test-view {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .messaging {
+    margin: 10px;
+
+    input {
+      width: 200px;
+    }
+  }
+
+  .buttons {
+    clear: both;
+  }
+
+  button {
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .here-now {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .connection_status {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .message-present {
+    background-color: orange;
+    color: white;
+    font-size: 2em;
+    font-size: bold;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    height: 75px;
+  }
+
+  .row {
+    margin: 20px 0 20px 0;
+  }
+
+  .good {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+  }
+
+  .bad {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
+}

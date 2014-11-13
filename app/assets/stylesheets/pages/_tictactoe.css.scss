@@ -1,0 +1,140 @@
+// @import "global";
+
+.tictactoe-content {
+  @include container($container);
+  @include gutter(15%);
+  counter-reset: td;
+
+  .wrapper {
+    @include span(8 of 12);
+  }
+
+  %xsandos {
+    &:after {
+      @include font-size(5);
+      bottom: 0px;
+      color: $wf-gray-med;
+      font-family: "ifl-wireframe";
+      left: 0;
+      line-height: 140px;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: -10px;
+      z-index: -1;
+    }
+  }
+
+  table {
+    @include container(500px center);
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: 0;
+    margin-top: 4%;
+
+    td {
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      border-radius: 8px;
+      @include gallery(1 of 3);
+      background: lighten($dark-blue, 30%);
+      border: 0;
+      color: $white;
+      cursor: pointer;
+      display: block;
+      font-family: $font;
+      font-size: 28px;
+      font-weight: 400;
+      height: 140px;
+      margin-bottom: 15px;
+      position: relative;
+      user-select: none;
+      width: 140px;
+      z-index: 0;
+
+      @include ie {
+        margin-left: 5px;
+      }
+
+      span {
+        position: absolute;
+        bottom: 5px;
+        text-align: center;
+        display: block;
+        margin: auto;
+        right: 0;
+        left: 0;
+
+        &:before {
+          content:counter(td) ". ";
+          counter-increment:td;
+          position: absolute;
+          bottom: 0px;
+          left: 10px;
+          @include font-size(1.5);
+          opacity: 0.6;
+        }
+      }
+
+      &.ex {
+        background: $orange;
+
+        &:after {
+          @extend %xsandos;
+          color: lighten($orange, 10%);
+          content: "D";
+        }
+      }
+
+      &.oh {
+        background: $maroon;
+
+        &:after {
+          @extend %xsandos;
+          color: lighten($maroon, 10%);
+          content: "K";
+        }
+      }
+    }
+  }
+
+  &.student-content {
+    td {
+      border-radius: 16px;
+      border: 2px solid $white;
+      background: rgba(29, 36, 89, 0.5);
+      width: 150px;
+      height: 150px;
+    } 
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+.tictactoe-legend {
+  @include span(4 of 12 last);
+  margin-top: 4%;
+  text-align: center;
+
+  figure {
+    margin-top: 10%;
+
+    img {
+      width: 125px;
+      height: auto;
+    }
+  }
+
+  figcaption {
+    font-style: normal;
+    font-family: $font-secondary;
+    white-space: nowrap;
+  }
+}

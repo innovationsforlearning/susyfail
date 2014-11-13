@@ -1,0 +1,236 @@
+// @import "global";
+
+// THE ENVIRONMENT INDICATOR
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.environment-indicator {
+  color: $white;
+  display: none;
+  font-family: $font-secondary;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0px;
+  width: 50px;
+}
+
+.development .environment-indicator {
+  background-color: #008000;
+  display: block;
+}
+
+.staging .environment-indicator {
+  background-color: purple;
+  display: block;
+}
+
+.production .environment-indicator {
+  background-color: $red;
+  display: block;
+}
+
+.signin-main,
+.admin-main {
+  color: $white;
+  @include span(7 of 12 last);
+
+  .bigtext {
+    @include font-size(4);
+    font-family: $font-logo;
+    font-weight: 600;
+    text-align: center;
+
+    span:first-child {
+      line-height: 1;
+
+      &:after {
+        content:"\2122";
+        font-size: 20px;
+        vertical-align: top;
+      }
+    }
+
+    .subtitle {
+      display: block;
+      @include font-size(2);
+      font-weight: 100;
+    }
+  }
+
+  p {
+    color: inherit;
+    text-align: center;
+    @include font-size(1.2);
+
+    &:last-of-type {
+      margin-top: 2%;
+    }
+  }
+
+  a {
+    color: $orange;
+  }
+
+  input.button {
+    @extend %buttoned;
+    @include font-size(2.5);
+    display: block;
+    margin: 0 auto 4%;
+    padding: 3% 6%;
+    width: span(50% center);
+
+    &.reset-password-button {
+      @include font-size(1.2);
+    }
+  }
+}
+
+.form-inputs {
+  text-align: center;
+  margin-top: 4%;
+
+  input { // :not([type=checkbox])
+    background: transparent;
+    @include border-radius(8px);
+    margin-bottom: 5%;
+    min-height: 50px;
+    max-width: 80%;
+    color: $white;
+
+    &[type=checkbox] {
+      margin-bottom: 0;
+    }
+  }
+
+
+  @include ie {
+    input {      
+      background: transparent;
+      color: $white;
+      margin-bottom: 5%;
+      max-width: 80%;
+      padding: 2% 0 2% 2%;
+      line-height: 50px;
+    }
+  }
+
+  label {
+    text-align: left;
+  }
+}
+
+.user_remember_me {
+  margin-bottom: 5%;
+
+  input[type=checkbox],
+  input#user_remember_me,
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+
+    @include ie {
+      margin: 0;
+      min-height: 0;
+      border: 0;
+    }
+  }
+}
+
+.admin-links {
+  color: $orange;
+  text-align: center;
+  font-size: 0;
+
+  a {
+    display: inline-block;
+    @extend %gamma;
+
+    &:after {
+      content: " \2022";
+      padding: 0 10px;
+      display: inline-block;
+    }
+
+    &:last-of-type:after {
+      content: "";
+      padding: 0;
+    }
+
+    @include ie {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+.info-direction-buttons {
+  li {
+    height: 60px;
+    margin-bottom: 6%;
+  }
+  a {
+    display: block;
+    color: $white;
+    padding: 3% 5%;
+
+    &:before {
+      @include font-size(2.5);
+      padding-right: 4%;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+.info-main {
+  color: $white;
+  margin-top: 5%;
+
+  h2 {
+    @include font-size(3);
+  }
+
+  p {
+    @include font-size(2);
+    color: $white;
+    padding: 40px 0;
+    font-weight: 100;
+  }
+
+  &.info-main-left {
+    @include span(7 of 12);
+    padding-right: 10%;
+  }
+
+  &.info-main-right {
+    @include span(5 of 12 last);
+  }
+}
+
+.info-main-right {
+  ul {
+    padding-top: 40px;
+    font-weight: 100;
+
+    li {
+      @include font-size(1.6);
+      padding-bottom: 4%;
+
+      &:before {
+        padding-right: 6%;
+      }
+    }
+  }
+}
+
+
+

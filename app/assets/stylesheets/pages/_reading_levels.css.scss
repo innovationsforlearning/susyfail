@@ -1,0 +1,53 @@
+// @import "global";
+
+.reading-levels {
+  @include container($container center);
+  margin-top: 4%;
+
+  li {
+    @include span(1 of 5);
+
+    a {
+      @include border-radius(50%);
+      @include font-size(2.5);
+      background: $light-gray;
+      color: $white;
+      display: block;
+      height: 75px;
+      line-height: 75px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 75px;
+
+      &:hover {
+        background: $yellow;
+      }
+      
+      &.selected {
+        background: $orange;
+      }
+    }
+  }
+
+  &.story-reading-levels li {
+    @include span(1 of 8);
+  }
+
+}
+
+.reading-level-button {
+  @extend %buttoned;
+  @include font-size(2);
+  display: block;
+  margin: 4% auto;
+  text-align: center;
+  @include ie {
+    width: 200px;
+  }
+}
+
+.continue-notice {
+  color: $red;
+  font-size: 1.2em;
+  text-align: center;
+}

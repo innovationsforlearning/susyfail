@@ -1,0 +1,225 @@
+// @import "global";
+
+.tab-container {
+  @include break;
+  @include container(800px center);
+  height: 55px;
+}
+
+.sub-tab-container {
+  display: none;
+}
+
+.resource-tabs {
+  display: inline-block;
+  float: right;
+  width: 70%;
+
+
+  li {
+    display: table-cell;
+    text-align: center;
+  }
+
+  a {
+    color: $footer-text;
+    display: block;
+    padding: 1em;
+
+    &:hover,
+    &:focus {
+      background: $footer-dark-bg;
+    }
+
+    &.active {
+      border-color: transparent;
+      color: $white;
+      display: block;
+      position: relative;
+
+      &:before,
+      &:after {
+        background: $footer-med-bg;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 0.5em; // ...our notch will end up being half this size. We define it in ems to scale it up with the text size. */
+        left: 50%;
+        margin-left: -0.5em; // Half of our magic number. */
+        position: absolute;
+        width: 0.5em; // Must match our magic number... */
+      }
+
+      &:after {
+        border-bottom-color:transparent;
+        border: 0.5em solid $footer-dark-bg; /* Half of our magic number and same colours as our nav’s background. */
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+}
+
+.tab-submenu {
+  background: $footer-med-bg;
+  padding-top: 0.5%;
+  position: relative;
+  z-index: 5;
+}
+
+.tab-submenu-list {
+
+  display: none;
+
+  &.active {
+    @include break;
+    @include container(800px center);
+    display: block;
+  }
+
+  li {
+    border-right: 0;
+    display: table-cell;
+    text-align: center;
+
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    a {
+      background: inherit;
+      color: $footer-text;
+      display: block;
+      padding: 1em;
+    }
+  }
+}
+
+.tabs,
+.tab-submenu-list {
+  font-family: $font-secondary;
+}
+
+
+.sub-tabs {
+  background: $wf-gray-med;
+}
+
+
+.tab-submenu-link {
+  &.active {
+    border-radius: 8px 8px 0 0;
+    color: $white;
+    position: relative;
+
+    &:before,
+    &:after {
+      background: $footer-light-bg;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 0.5em; // ...our notch will end up being half this size. We define it in ems to scale it up with the text size. */
+      left: 50%;
+      margin-left: -0.5em; // Half of our magic number. */
+      position: absolute;
+      width: 0.5em; // Must match our magic number... */
+    }
+
+    &:after {
+      border-bottom-color: transparent;
+      border: 0.5em solid $footer-med-bg; /* Half of our magic number and same colours as our nav’s background. */
+      height: 0;
+      width: 0;
+    }
+  }
+}
+
+.tab-submenu-content {
+  background: $footer-light-bg;
+  display: none;
+  overflow: auto;
+  padding: 10px 0;
+
+  &.active {
+    display: block;
+  }
+
+  ul {
+    @include container(800px center);
+    padding-top: 10px;
+
+    li {
+      @include gallery(2 of 12);
+      padding-top: 10px;
+    }
+  }
+}
+
+
+
+.onset-block {
+  @include span(4 of 12);
+
+  ul li {
+    @include gallery(4 of 12);
+  }
+}
+
+.rimes-block {
+  @include span(8 of 12);
+
+  ul li {
+    @include gallery(2 of 12)
+  }
+
+}
+
+
+
+// ----------- ACTIVITY PAGE TABS --------------------
+
+.activity-tabs {
+  top: 94px;
+  position: absolute;
+  right: 0px;
+  width: 495px;
+  z-index: 10;
+
+  &.tabs-under {
+    left: 10px;
+    right: auto;
+  }
+
+  .tab-link {
+    @include span(1 of 8);
+    background: $wf-gray-med-light;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid $subheader-bg;
+    color: $wf-gray-med;
+    display: block;
+    font-family: $font-secondary;
+    margin-right: 0.4%;
+    padding: 1%;
+    text-align: center;
+    width: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      background: $white;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  @include clearfix;
+
+  &.active {
+    display: block;
+  }
+}
+

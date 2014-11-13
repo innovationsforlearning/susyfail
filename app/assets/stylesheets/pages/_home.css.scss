@@ -1,0 +1,224 @@
+.admin-main {
+  @include span(7 of 12 last);
+
+  h2 {
+    @include font-size(3);
+    color: $white;
+  }
+
+  h3 {
+    color: $white;
+  }
+
+  &.feedback-main {
+    @include span(6 of 12 last);
+    @extend %delta;
+    color: $white;
+
+    h2 {
+      @include font-size(2);
+      color: $bright-blue;
+      text-align: left;
+    }
+
+    li,
+    legend,
+    h2 {
+      margin-bottom: 3%;
+    }
+
+    legend {
+      font-weight: 600;
+    }
+
+    input,
+    label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    label {
+      color: $white;
+    }
+
+    textarea {
+      border-radius: 4px;
+      border: 0;
+      color: $med-gray;
+      margin-top: 1%;
+      resize: vertical;
+
+      &:focus {
+        color: $text-blue;
+      }
+    }
+
+    button.submit {
+      @extend %buttoned;
+      @include font-size(2);
+      padding: 3% 10%;
+    }
+  }
+}
+
+a.icon-link{
+
+  &.large {
+    @include font-size(8);
+    background: $white;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+
+    @include ie {
+      background: none;
+    }
+
+    &.icon-tutor-filled {
+      color: $home-blue;
+    }
+
+    &.icon-calendar-filled {
+      color: $red;
+    }
+
+    &.icon-pencil-filled {
+      color: $green;
+    }
+
+    &:before {
+      vertical-align: top;
+    }
+  }
+
+  &.medium {
+    @include font-size(4);
+    color: $white;
+  }
+}
+
+.home-first-tier,
+.home-second-tier {
+  padding: 4% 0;
+
+  .row .column {
+    @include span(1 of 3);
+  }
+}
+
+.home-first-tier {
+  .b-body p {
+    color: $white;
+    font-family: $font;
+    text-align: center;
+  }
+}
+
+.home-second-tier {
+  border: 1px solid lighten($light-gray, 30%);
+  @include border-radius(16px);
+  position: relative;
+  margin-top: 6%;
+
+  &:before {
+    content: "L";
+    font-family: "ifl-wireframe";
+    position: absolute;
+    top: -20px;
+    left: 47%; // magic number
+    color: $white;
+    font-size: 30px;
+  }
+}
+
+// AGNOSTIC HOME PAGE -------------------------------------------------
+
+.admin-main-agnostic {
+  @include container(500px);
+  color: $white;
+  text-align: center;
+
+  h2 {
+    font-family: $font-logo;
+    font-weight: 500;
+
+    span,
+    sup {
+      @include font-size(2);
+      font-weight: 100;
+    }
+  }
+
+  p {
+    color: $white;
+    @extend %delta;
+    font-weight: 100;
+    margin: 3% 0;
+  }
+
+  i {
+    text-align: center;
+
+    span {
+      display: block;
+    }
+
+    &:before {
+      @include font-size(3);
+    }
+
+    &.icon-computer:before {
+      @include font-size(3.5);
+    }
+  }
+
+  a {
+    color: $orange;
+    margin: 3% 0;
+    display: block;
+  }
+
+  .home-needed-things {
+    @include container(500px center);
+    @extend .row;
+    @extend .three;
+    @extend .columns;
+  }
+}
+
+.home-login-agnostic {
+  @include container($container break);
+  text-align: left;
+
+  .home-agnostic-header {
+    @include span(5 of 12);
+
+    p {
+      @extend %epsilon;
+    }
+  }
+
+  .home-agnostic-login {
+    @include span(7 of 12 last);
+
+    .form-inputs,
+    .form-actions {
+      text-align: right;
+    }
+  }
+
+  h3 {
+    @include font-size(3);
+    font-weight: 300;
+  }
+
+  .form-actions {
+    a,
+    button {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

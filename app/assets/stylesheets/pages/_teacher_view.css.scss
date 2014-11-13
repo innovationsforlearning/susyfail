@@ -1,0 +1,114 @@
+// @import "global";
+
+.student-index-container {
+  .activity-nav {
+    @include span(7 of 12);
+  }
+
+  table {
+    border: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  tbody {
+    width: 100%;
+  }
+
+  th {
+    @extend %epsilon;
+    background-color: $dark-gray;
+    border: 0;
+    color: $light-gray;
+    font-family: $font-secondary;
+    padding: 1% 2%;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  tr {
+    border: 0;
+    width: 100%;
+
+    &:nth-child(even) {
+      background: $light-gray;
+    }
+
+    &.visible {
+      display: table-row;
+    }
+
+  }
+
+  td {
+    @extend %delta;
+    border: 0;
+    padding: 1.5% 2%;
+    overflow: hidden;
+
+    input {
+      width: 45%;
+    }
+
+    &.visible {
+      display: table-cell;
+    }
+
+    button {
+      @extend %unbuttoned;
+      text-transform: uppercase;
+
+      &.save-student,
+      &.save-new {
+        color: $orange;
+        white-space: nowrap;
+      }
+    }
+
+    &.student-level,
+    &.student-gender,
+    &.student-button,
+    &.student-speaks-spanish {
+      width: 5%;
+      text-align: center;
+    }
+
+    &.student-button {
+      font-family: $font-secondary;
+      text-align: center;
+      @extend %epsilon;
+    }
+
+    &.student-name {
+      width: 40%;
+    }
+    &.student-tutor {
+      width: 40%;
+    }
+  }
+}
+
+.add-student {
+  @extend %unbuttoned;
+  color: $correct-bg;
+  padding: 2%;
+  @include font-size(1.2);
+  white-space: nowrap;
+
+  span {
+    color: $text-blue;
+    @include font-size(1);
+    vertical-align: middle;
+  }
+
+  &:before {
+    vertical-align: middle;
+  }
+}
+
+#students-index {
+
+  .hidden {
+    display: none;
+  }
+}

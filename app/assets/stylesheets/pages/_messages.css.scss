@@ -1,0 +1,156 @@
+// @import "global";
+
+.messages {
+
+  .pagination {
+    span {
+      color: $dark_gray;
+
+      a {
+        color: $dark_gray;
+      }
+
+      &.page {
+        border: 1px solid $dark_gray;
+      }
+    }
+  }
+}
+
+.message-details {
+  @include container($container);
+  @include break;
+  padding: 2%;
+  border-bottom: 1px solid $light-gray;
+
+  .student-filter {
+    width: span(3 of 12);
+    display: inline-block;
+    vertical-align: middle;
+    select {
+      @extend %unselected;
+      min-width: 200px;
+    }
+  }
+
+  .create-message {
+    width: span(3 at 3 of 12);
+    @extend %unbuttoned;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .create-message-link {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+}
+
+.message-block {
+    padding: 2% 0;
+    overflow: auto;
+  li{
+    @include break;
+    border-bottom: 1px solid $light-gray;
+    padding: 2% 0;
+    overflow: auto;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.message-list,
+.alert-list,
+.create-message {
+
+  .message-modal & {
+    @include container($container);
+  }
+}
+
+.message-list {
+  padding: 0 2%;
+}
+
+.message-body {
+  @include span(5 of 6 no-gutters);
+
+  h1,
+  h2 {
+    margin-bottom: 1%;
+  }
+
+  date {
+    font-family: $font-secondary;
+    @extend %zeta;
+    // font-size: 1.1em;
+  }
+
+  p {
+    margin-bottom: 2%;
+  }
+
+  .alert-list & {
+    @include span(6 of 6);
+  }
+}
+
+.article-nav {
+  .previous {
+    float: left;
+  }
+
+  .progress {
+    float: right;
+  }
+}
+
+.message-reply {
+  @include span(1 at 5 of 6 last);
+
+  a {
+    @extend %delta;
+    @include iconized(25px);
+    text-transform: uppercase;
+  }
+}
+
+.create-message {
+  padding: 2%;
+  .create-message-field {
+    width: span(70%);
+
+    input[type=text],
+    textarea {
+      margin-bottom: 4%;
+    }
+
+    textarea {
+      border-radius: 4px;
+    }
+  }
+
+  .send-message-list {
+    legend {
+      font-family: $font-secondary;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    input[type=checkbox],
+    label {
+      display: inline-block;
+      margin-bottom: 2%;
+    }
+    label {
+      width: 95%; // not a great way to do this.
+    }
+  }
+  button.submit {
+    @extend %buttoned;
+    width: span(30%);
+  }
+}
+

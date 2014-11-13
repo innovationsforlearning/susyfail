@@ -1,0 +1,230 @@
+// @import "global";
+
+// NEW FOOTER CODE
+
+.footer {
+  .show {
+    display: block;
+  }
+
+  .active {
+    color: $white;
+  }
+}
+
+#level-one {
+  background: $dark-blue;
+}
+
+.level-one-container {
+  @include container($container break);
+  height: 70px;
+
+  a {
+    color: $med-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  h2 {
+    @include span(3 of 12);
+    color: $bright-blue;
+    display: inline-block;
+    line-height: 70px;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  ul {
+    @include span(8 of 12 last);
+    display: inline-block;
+    line-height: 70px;
+    vertical-align: middle;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      margin-right: 2%;
+
+    }
+  }
+}
+
+#level-two {
+  background: $med-blue;
+}
+
+.level-two-container {
+  @include container($container break);
+  height: 55px;
+  display: none;
+
+  a {
+    color: $text-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  ul {
+    line-height: 55px;
+
+    li {
+      display: inline-block;
+      margin-right: 2%;
+    }
+  }
+}
+
+#level-three {
+  background: $home-blue;
+}
+
+.level-three-container {
+  @include container($container break);
+  height: 55px;
+  display: none;
+
+  a {
+    color: $text-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  ul {
+    line-height: 55px;
+
+    li {
+      display: inline-block;
+      margin-right: 2%;
+    }
+  }
+}
+
+#level-four {
+  background: $med-blue;
+}
+
+.level-four-container {
+  @include container($container break);
+  overflow: auto;
+  display: none;
+
+  ul {
+    padding: 2% 0;
+
+    li {
+      @include gallery(2 of 12);
+      padding-bottom: 1%;
+    }
+  }
+
+}
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+.footer {
+  clear: both;
+  color: $white;
+  line-height: 1.2;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 103;
+
+  &.footer-main {
+    background: $footer-dark-bg;
+  }
+}
+
+//Footer Nav
+
+.footer-header {
+  background: $footer-dark-bg;
+}
+
+.footer-title {
+  color: $yellow;
+  display: inline-block;
+  font-family: $font;
+  padding: .6em 0 0;
+}
+
+.nav-footer {
+  margin: (-$pad) (-$pad) $space;
+
+  li {
+    border-bottom: 1px solid $gray-dark;
+
+    @media all and (min-width: $bp-med) {
+      border: 0;
+      float: left;
+    }
+  }
+
+  a {
+    display: block;
+    padding: $pad;
+  }
+}
+
+.footer-close {
+
+  button {
+    @extend %unbuttoned;
+    color: $white;
+    margin-left: 5%;
+
+    &:focus {
+      outline-style: none;
+    }
+  }
+}
+
+.copyright {
+  color: $footer-text;
+  display: block;
+  line-height: 0;
+  text-align: center;
+
+  @media all and (min-width: $bp-med) {
+    text-align: center;
+  }
+}
+
+.footer-bar {
+  @include break;
+  background: $footer-dark-bg;
+  font-family: $font-secondary;
+  height: 30px;
+  padding: 1% 0;
+}
+
+.footer-student {
+  background-image: image-url("student-portal-footer-bg.png");
+  height: 78px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: repeat-x;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-application {
+  color: $white;
+  background: $black;
+  text-align: center;
+  padding: 1%;
+}
+
+.sub-tab-wrapper {
+  @include container(800px);
+}

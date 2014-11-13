@@ -1,0 +1,506 @@
+// @import "global";
+
+// LEAN MODAL CSS
+
+#lean_overlay,
+%lean-overlay {
+  background: #fff;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 102;
+  border-radius: 16px;
+  min-height: 650px;
+  position: absolute;
+
+  @include ie {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  @include ie {
+    min-height: auto;
+    behavior: url(/PIE.htc);
+  }
+}
+
+%dark-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+}
+
+// -------------------
+
+.modal {
+  background:rgba(0,0,0,0.2);
+  border-radius:8px;
+  box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  max-width: 400px;
+  position:absolute;
+  display: none;
+
+  h1 {
+    color: $text-blue;
+    padding-bottom: 2%;
+  }
+
+  section {
+    padding: 5% 10%;
+    background: $white;
+  }
+
+  &.overlay {
+    max-width: 960px;
+    width: 960px;
+    box-shadow: none;
+    background: none;
+    position: absolute;
+    behavior: url(/PIE.htc);
+
+    section {
+      background: transparent;
+      color: $text-blue;
+
+
+      p {
+        padding-bottom: 2%;
+      }
+    }
+
+      ul,
+      ol {
+        width: 100%;
+        margin-bottom: 2%;
+      }
+
+      ol {
+        padding: 0;
+        list-style: decimal inside;
+      }
+
+      ul {
+        list-style: disc inside;
+      }
+
+    .sidebar {
+      border: 0;
+      a {
+        color: $white;
+      }
+    }
+
+    .directions-continue {
+      @extend %beta;
+      @extend %buttoned;
+      display: block;
+      margin: 4% auto;
+      padding: 4% 5%;
+      text-align: center;
+    }
+  }
+}
+
+.modal-content {
+  background: $black;
+}
+
+.modal_close {
+  color: $black;
+  display: block;
+  height: 30px;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  width: 30px;
+  font-size: 30px;
+}
+
+// DISTRICTS OVERLAY ------------------------------------------------------
+
+.districts-overlay {
+  ul {
+    @include container($container no-gutters);
+
+    li {
+      @include gallery(4 of 12);
+      @extend %beta;
+      font-weight: 300;
+      margin-bottom: 2%;
+      list-style: none;
+
+      a {
+        color: $orange;
+        &:hover {
+          color: $med-gray;
+        }
+      }
+    }
+  }
+}
+
+// ACTIVITIES INTRO OVERLAY  --------------------------------------------------
+
+#introOverlay,
+#chatDisplay {
+  @extend %lean-overlay;
+
+  &.show {
+    display: block;
+    opacity: 0.98;
+    height: 100%;
+  }
+}
+
+// DIRECTIONS ---------------------------------------------------
+
+.remember-directions {
+  text-align: center;
+  margin-top: 8%;
+  @extend %epsilon;
+}
+
+// ALERTS
+
+.alert-overlay {
+  @extend %dark-overlay;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+
+  .alert-modal {
+    display: block;
+    z-index: 200;
+    opacity: 1;
+    top: 10%;
+    margin: auto;
+    position: fixed;
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    max-width: 600px;
+    display: inline-block;
+    text-align: justify;
+  }
+
+
+  header {
+    @include font-size(1.5);
+    background: $wrong-bg;
+    color: $white;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+
+    &.notice-header {
+      background: $white;
+      color: $text-blue;
+      p {
+        @include font-size(3);
+      }
+      
+
+      button {
+        color: $text-blue;
+      }
+    }
+
+    i {
+      width: 100%;
+
+      &:before {
+        @include font-size(3);
+      }
+    }
+
+    &.short-alert-header {
+      padding: 6%;
+      @include font-size(1.2);
+    }
+  }
+
+  section {
+    @extend %gamma;
+    color: $text-blue;
+    padding: 5% 10%;
+    background: $white;
+    text-align: center;
+    font-weight: 100;
+
+    button {
+      @extend %gamma;
+      @extend %buttoned;
+      margin-top: 4%;
+      padding: 4%;
+
+    }
+  }
+
+  .short-alert {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $white;
+  }
+
+  &.show {
+    display: block;
+  }
+}
+
+// MESSAGE OVERLAY ----------------------------------------------
+
+.message-modal {
+  max-width: 660px;
+
+  header {
+    background: $med-blue;
+    padding: 20px;
+  }
+
+  section {
+    @extend %epsilon;
+    text-align: left;
+    padding: 20px;
+  }
+
+  button {
+    @extend %beta;
+    margin-top: 2%;
+    float: right;
+    display: block;
+    padding: 3% 6%;
+    width: 150px;
+    height: 55px;
+  }
+
+  .message-list {
+    min-height: 200px;
+    overflow: auto;
+
+    &.message-scroll {
+      overflow: scroll;
+      height: 200px;
+    }
+
+    .article-nav {
+      margin-top: 4%;
+
+      .prev {
+        @include span(6 of 12);
+      }
+
+      .progress {
+        @include span(6 of 12 last);
+        text-align: right;
+      }
+    }
+  }
+
+  .message-block {
+    border: 0;
+    padding: 0;
+
+    .message-body {
+      @include span(4 of 6);
+
+      p {
+        margin-bottom: 2%;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      h1 {
+        margin: 2% 0;
+
+        &.icon-IFL-circle:before,
+        &.icon-tutor:before {
+          @include font-size(2);
+        }
+
+        &.icon-alert {
+          color: $wrong-bg;
+
+          &:before {
+            @extend %alpha;
+          }
+        }
+      }
+
+      h2 {
+        margin: 2% 0;
+      }
+    }
+    .message-next {
+      // @include span(2 of 6 last);
+      position: fixed; // this might be a hack!
+      margin-left: 400px;
+    }
+  }
+
+  .message-overlay-input {
+    background: $light-gray;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    padding: 5%;
+    text-align: center;
+    top: 50%;
+
+    textarea {
+      height: 100px;
+      border-radius: 8px;
+    }
+
+    button {
+      @include font-size(1.1);
+      white-space: nowrap;
+    }
+  }
+
+  .message-overlay-sent {
+    background: $light-gray;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    padding: 5%;
+    text-align: center;
+    top: 50%;
+  }
+
+}
+
+// CHAT DISPLAY
+
+#sessionInfo,
+#chatDisplay,
+#messageOverlay {
+  width: 100%;
+}
+
+.chat-display {
+  opacity: 1;
+
+  h2 {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    color: $med-gray;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 4%;
+  }
+
+  .chat-overlay-message {
+    @include font-size(2.5);
+    color: $orange;
+    text-align: center;
+  }
+
+  .chat-overlay-input {
+    background: $light-gray;
+    border-radius: 0 0 16px 16px;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 5%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+
+    input {
+      border-radius: 4px;
+      border: 0;
+      min-height: 100px;
+      width: span(60%);
+    }
+
+    button {
+      @extend %beta;
+      display: block;
+      margin: 3% auto 0;
+      padding: 4%;
+      width: span(25%);
+    }
+  }
+}
+
+// STUDENT CHAT DISPLAY
+
+.student-chat-block {
+  margin: 0 auto;
+  position: fixed;
+  left: 5%;
+  white-space: nowrap;
+  top: 30px;
+
+  &.hide-chat {
+    visibility: hidden;
+  }
+
+  &.up-bunny {
+    bottom: -24px;
+  }
+
+  &.down-bunny {
+    bottom: -206px;
+  }
+
+  .rabbit {
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .message-owl {
+    width: 170px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .student-chat-message {
+    @extend %beta;
+    background: $white;
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    min-width: 30%;
+    min-height: 30px;
+    line-height: 30px;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 30px 7px 0;
+      border-color: transparent #ffffff transparent transparent;
+      position: absolute;
+      left: -28px;
+      top: 40%;
+    }
+  }
+
+  .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+

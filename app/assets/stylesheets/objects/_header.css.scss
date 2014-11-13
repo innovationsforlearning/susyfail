@@ -1,0 +1,86 @@
+// @import "global";
+
+.header {
+  @include container($container);
+  display: table;
+  width: 100%;
+  padding: 2% 0;
+  overflow: auto;
+}
+
+.logo-block {
+  width: span(4 of 12);
+  display: table-cell;
+  vertical-align: middle;
+
+  @include ie {
+    width: span(4 of 12);
+  }
+}
+
+.logo-link {
+  @include ie {
+    display: inline-block;
+    color: transparent;
+
+    &:hover {
+      color: transparent;
+    }
+  }
+}
+.logo {
+  line-height: 1em;
+  padding: 0 2%;
+  border: 0;
+
+  & img {
+    border: 0;
+  }
+  
+  @include ie {
+    width: 300px;
+    height: 30px;
+    border: 0;
+  }
+}
+
+.nav-toggle {
+  border-left: 1px solid #dbdbdb;
+  display: block;
+  float: right;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.9rem 1rem 0.7rem;
+
+  @media all and (min-width: $bp-med) {
+    display: none;
+  }
+
+  @media all and (max-width: 17em) {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+
+.search-form {
+  max-height: 0;
+  overflow: hidden;
+
+  @media all and (min-width: $bp-med) {
+    float: right;
+    max-height: none;
+    margin: 0.65em 0.5em 0 0;
+  }
+}
+
+.school-title-block {
+  @include span(8 of 12 last);
+  text-align: right;
+
+  p {
+    color: $white;
+    display: inline-block;
+    vertical-align: middle;
+    
+  }
+}

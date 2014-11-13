@@ -1,0 +1,146 @@
+// @import "global";
+
+
+
+.mysteryword-content {
+  @include container(740px center);
+  margin-top: 4%;
+}
+
+.mysteryword-letters {
+  @include container(13);
+  @include break;
+  @include border-radius(8px);
+  padding: 4%;
+  text-transform: lowercase;
+
+  li {
+    @include gallery(1 of 13);
+
+    &.on,
+    &:hover {
+      color: $wf-gray-dark;
+    }
+
+  }
+}
+
+.mysteryword-clues,
+.letters {
+  @extend .huge;
+  width: 100%;
+
+  ul {
+    display: block;
+    margin: auto;
+    text-align: center;
+    min-height: 115px;
+
+    li {
+      @include clearfix;
+      display: inline-block;
+      width: 85px;
+      position: relative;
+
+      &:after {
+        @include border-radius(20px);
+        background-color: $text-blue;
+        bottom: 0;
+        content: "";
+        height: 10px;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  input {
+
+    @include border-radius(0);
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-family: $font;
+    font-weight: 700;
+    padding: 2% 2% 10% 2%;
+    position: relative;
+    text-align: center;
+    text-transform: lowercase;
+
+    .student-content & {
+      background: transparent;
+      color: $white;
+    }
+
+    &:focus {
+      outline-style: none;
+    }
+  }
+}
+
+.mysteryword-stars,
+.stars {
+  font-size: 60px;
+  margin: 5% 0;
+
+  i.icon-star {
+    @include gallery(1 of 7);
+    background-image: image-url('star-filled.svg');
+    background-repeat: no-repeat;
+    width: 67px;
+    height: 67px;
+
+    @include ie {
+      background-image: image-url('star-filled.png');
+      margin: 0 2%;
+      width: 70px;
+    }
+
+    &.off {
+      background-image: image-url('star.svg');
+
+      @include ie {
+        background-image: image-url('star.png');
+      }
+    }
+  }
+
+  div {
+    @include span(1 of 7);
+  }
+}
+
+.letter-count {
+  width: 60%;
+  margin: 0 auto;
+  @include span(6 of 12);
+
+  .letter-counts {
+    @include border-radius(50%);
+    background: $light-gray;
+    color: $text-blue;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin: .2em;
+    text-align: center;
+    width: 30px;
+
+    &.active {
+      background-color: $text-blue;
+      color: $white;
+    }
+  }
+}
+
+.suggested-words {
+  @include span(6 of 12 last);
+  .suggested-stimuli {
+    @include container($container);
+    li {
+      @include gallery(4 of 12);
+    }
+  }
+}

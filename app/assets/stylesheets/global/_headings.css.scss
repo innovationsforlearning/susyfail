@@ -1,0 +1,57 @@
+// @import "global/variables";
+// @import "global/mixins";
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font;
+}
+h1, 
+.alpha, 
+%alpha   { 
+  line-height: 1.2;
+  @include font-size(2); // 30px
+}
+
+h2, 
+.beta, 
+%beta    { 
+  line-height: 1.2;
+  @include font-size(1.5); // 22.5px
+}
+
+h3, 
+.gamma, 
+%gamma   { 
+  line-height: 1.2;
+  @include font-size(1.33); // 20px
+}
+
+h4, 
+.delta, 
+%delta   {
+  @include font-size(1); // 15px
+}
+
+h5, 
+.epsilon, 
+%epsilon {
+  @include font-size(.889); // 13.33px
+}
+
+h6, 
+.zeta, 
+%zeta    {
+  @include font-size(.667); // 10px
+}
+
+.huge {
+  @include font-size(5); // 75px
+}
+
+/* Subheadings */
+.subheading {
+  font-family: $font-secondary;
+  font-weight: normal;
+}

@@ -1,0 +1,206 @@
+// @import "global";
+
+.wordsort-content {
+  @include container(800px center);
+  margin-top: 4%;
+}
+
+.wordsort-columns {
+  @include container(690px center);
+
+  @include ie {
+    @include container(800px center);
+  }
+}
+
+.wordsort-column {
+  @extend %alpha;
+  float: left;
+  width: span(220px);
+  margin-right: 2%;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .wordsort-arrow {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+
+    &.arrow-left {
+      background-image: image-url("arrow-left.png");
+      float: right;
+    }
+
+    &.arrow-center {
+      background-image: image-url("arrow-center.png");
+      position: absolute;
+      height: 55px;
+      left: 50%;
+    }
+
+    &.arrow-right {
+      background-image: image-url("arrow-right.png");
+      float: left;
+    }
+  }
+
+
+  .words,
+  .word-family {
+    color: $text-blue;
+    font-family: $font;
+    font-weight: 300;
+
+    .student-content & {
+      color: $white;
+    }
+  }
+
+  .word-family {
+    @include font-size(3);
+    margin: 1.2em 0 0.5em 0;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 0.6em;
+  }
+}
+
+.wordsort-box {
+  background: $wf-gray-light;
+  @include border-radius(6px);
+  height: 165px;
+  padding: 8%;
+  width: 220px;
+
+  li {
+    @include font-size(2);
+    color: $white;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    text-align: left;    
+  }
+
+  &.tutor-box li {
+    &:after {
+      content: "y";
+      font-family: ifl-wireframe;
+      position: absolute;
+      right: 8%;
+      top: 0;
+    }
+  }
+
+  [data-column="1"] & {
+    background: $red;
+  }
+
+  [data-column="2"] & {
+    background: $orange;
+  }
+
+  [data-column="3"] & {
+    background: $blue;
+  }
+}
+
+.wordsort-field {
+  @include span(700px center);
+  @include prefix(4.16667%);
+  @include clearfix;
+  margin-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+
+  input {
+    height: 48px;
+  }
+
+  button {
+    position: absolute;
+    right: 7px;
+    top: 2px; // todo magic number
+  }
+}
+
+.wordsort-family {
+  float: left;
+  width: 220px;
+
+  span {
+    min-height: 50px;
+  }
+}
+
+ol.words {
+  @include clearfix;
+  @include pre(5%);
+  counter-reset:li;
+
+  li {
+    @include gallery(4);
+    @include font-size(3);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:before {
+      content:counter(li) ". ";
+      counter-increment:li;
+      margin-left: 10%;
+
+      @include ie {
+        content: none;
+        counter-increment: none;
+        margin-left: -20px;
+      }
+    }
+
+    &.selected {
+      background-color: $text-blue;
+      color: $white;
+      @include border-radius(8px);
+
+      @include ie {
+        color: inherit;
+        background-color: transparent;
+        color: $red;
+      }
+
+      &:after {
+        content: "";
+        background-color: $text-blue;
+
+        @include ie {
+          content: none;
+          background-color: none;
+          @include pre(0);
+        }
+      }
+    }
+  }
+
+  @include ie {
+    counter-reset: none;
+    list-style: decimal;
+  }
+}
+
+// STUDENT SPECIFIC
+
+.wordsort-chosen-word {
+  @include container($container center break);
+  @include font-size(5);
+  font-weight: 700;
+  min-height: 100px;
+
+  p {
+    color: $white;
+    display: block;
+    text-align: center;
+  }
+}

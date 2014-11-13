@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+// MOST ICON FONTS
+
+@font-face {
+  font-family: "ifl-wireframe";
+  src: asset-url("ifl-wireframe.eot");
+  src: asset-url("ifl-wireframe.eot?#iefix") format("embedded-opentype"),
+     asset-url("ifl-wireframe.woff") format("woff"),
+     asset-url("ifl-wireframe.ttf") format("truetype"),
+     asset-url("ifl-wireframe.svg#ifl-wireframe") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "ifl-wireframe" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "ifl-wireframe" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// SPECIFIC ICON STYLES
+
+.icon-arrow:after {
+	content: "\61";
+	display: inline-block;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.icon-play:before {
+	font-size: 0.7rem;
+	padding-left: 0.2em;
+}
+
+.icon-play-box {
+	display: block;
+	margin-left: $pad-double;
+}
+
+.icon-play-box:before {
+	padding: $pad-quarter;
+	background: $gray;
+	color: $white;
+	margin-left: -1.7rem;
+	margin-right: $pad-half;
+}
+
+.icons li {
+  font-size: 72px;
+}
+
+// ------------------------->
+
+
+.icon-lifebuoy:before {
+  content: "a";
+}
+.icon-folder:before {
+  content: "f";
+}
+.icon-refresh:before {
+  content: "r";
+}
+.icon-assistance:before {
+  content: "d";
+}
+.icon-calendar-filled:before {
+  content: "i";
+}
+.icon-tutor-filled:before {
+  content: "j";
+}
+.icon-stories-filled:before {
+  content: "g";
+}
+.icon-tictactoe:before {
+  content: "k";
+}
+.icon-tictactoe-filled:before {
+  content: "l";
+}
+.icon-flashcard:before {
+  content: "m";
+}
+.icon-flashcard-filled:before {
+  content: "n";
+}
+.icon-pencil:before {
+  content: "p";
+}
+.icon-pencil-filled:before {
+  content: "q";
+}
+.icon-wordsort:before {
+  content: "s";
+}
+.icon-wordsort-filled:before {
+  content: "t";
+}
+.icon-message:before {
+  content: "u";
+}
+.icon-mystery:before {
+  content: "v";
+}
+.icon-mystery-filled:before {
+  content: "w";
+}
+.icon-next:before {
+  content: "x";
+}
+.icon-close:before {
+  content: "y";
+}
+.icon-closed-filled:before {
+  content: "z";
+}
+.icon-next-filled:before {
+  content: "A";
+}
+.icon-connect:before {
+  content: "B";
+}
+.icon-compass:before {
+  content: "b";
+}
+.icon-yes-filled:before {
+  content: "E";
+}
+.icon-no-filled:before {
+  content: "F";
+}
+.icon-back-button:before {
+  content: "G";
+}
+.icon-forward-button:before {
+  content: "H";
+}
+.icon-stories:before {
+  content: "c";
+}
+.icon-reset:before {
+  content: "C";
+}
+.icon-contract:before {
+  content: "I";
+}
+.icon-expand:before {
+  content: "J";
+}
+.icon-tictac-x:before {
+  content: "D";
+}
+.icon-tictac-o:before {
+  content: "K";
+}
+.icon-letter:before {
+  content: "L";
+}
+.icon-message-tutor:before {
+  content: "M";
+}
+.icon-whiteboard-filled:before {
+  content: "e";
+}
+.icon-tutor:before {
+  content: "N";
+}
+.icon-whiteboard:before {
+  content: "O";
+}
+.icon-messages:before {
+  content: "P";
+}
+.icon-messages-filled:before {
+  content: "Q";
+}
+.icon-calendar:before {
+  content: "R";
+}
+.icon-manage:before {
+  content: "S";
+}
+.icon-manage-filled:before {
+  content: "T";
+}
+.icon-notes:before {
+  content: "U";
+}
+.icon-notes-filled:before {
+  content: "V";
+}
+.icon-add:before {
+  content: "W";
+}
+.icon-refresh-filled:before {
+  content: "X";
+}
+.icon-assistance-1:before {
+  content: "Y";
+}
+.icon-alert:before {
+  content: "0";
+}
+.icon-home:before {
+  content: "1";
+}
+.icon-logout:before {
+  content: "h";
+}
+.icon-info-filled:before {
+  content: "o";
+}
+.icon-phone:before {
+  content: "4";
+}
+.icon-clock-30:before {
+  content: "3";
+}
+.icon-laptop:before {
+  content: "2";
+}
+.icon-ifl-circle:before {
+  content: "Z";
+}
+.icon-teacher-circle:before {
+  content: "5";
+}
+.icon-ifl:before {
+  content: "6";
+}
+.icon-districts:before {
+  content: "7";
+}
+.icon-close-bold:before {
+  content: "8";
+}
+.icon-close-bold-filled:before {
+  content: "9";
+}
+.icon-reading-levels:before {
+  content: "!";
+}
+.icon-file:before {
+  content: "\"";
+}
+.icon-play:before {
+  content: "#";
+}
+
+
+// SOCIAL FONTS
+
+// @font-face {
+// 	font-family: 'icons';
+// 	src:url('../fonts/icons.eot');
+// 	src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+// 		url('../fonts/icons.woff') format('woff'),
+// 		url('../fonts/icons.ttf') format('truetype'),
+// 		url('../fonts/icons.svg#icons') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+// [data-icon]:before {
+// 	font-family: 'icons';
+// 	content: attr(data-icon);
+// 	speak: none;
+// 	font-weight: normal;
+// 	line-height: 1;
+// 	-webkit-font-smoothing: antialiased;
+  
+// }
+
+// [class^="icon-"]:before, 
+// [class*=" icon-"]:before {
+//   display: inline-block;
+//   vertical-align: middle;
+//   padding-right: 2%;
+// }
+
+// .icon-twitter:before, .icon-stumbleupon:before, .icon-pinterest:before, .icon-linkedin:before, .icon-google-plus:before, .icon-search:before, .icon-play:before, .icon-menu:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-bubble:before, .icon-facebook:before, .icon-feed:before, .icon-youtube:before, .icon-tag:before, .icon-tumblr:before, .icon-instagram, .icon-podcast, .icon-apple,.icon-android, .icon-arrow:after, .icon-envelope:before {
+// 	font-family: 'icons';
+// 	speak: none;
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	font-variant: normal;
+// 	text-transform: none;
+// 	line-height: 1;
+// 	-webkit-font-smoothing: antialiased;
+// }
+// .icon-twitter:before {
+//     content: "\74";
+// }
+// .icon-stumbleupon:before {
+//     content: "\75";
+// }
+// .icon-pinterest:before {
+//     content: "\70";
+// }
+// .icon-linkedin:before {
+//     content: "\69";
+// }
+// .icon-google-plus:before {
+//     content: "\67";
+// }
+// .icon-search:before {
+//     content: "\73";
+// }
+// .icon-play:before {
+//     content: "\61";
+// }
+// .icon-menu:before {
+//     content: "\21";
+// }
+// .icon-arrow-left:before {
+//     content: "\23";
+// }
+// .icon-arrow-right:before {
+//     content: "\24";
+// }
+// .icon-bubble:before {
+//     content: "\25";
+// }
+// .icon-facebook:before {
+//     content: "\66";
+// }
+// .icon-feed:before {
+//     content: "\27";
+// }
+// .icon-youtube:before {
+//     content: "\79";
+// }
+// .icon-tag:before {
+//     content: "\28";
+// }
+// .icon-tumblr:before {
+//     content: "\6d";
+// }
+// .icon-instagram:before {
+//     content: "\22";
+// }
+// .icon-podcast:before {
+//     content: "\26";
+// }
+// .icon-android:before {
+//     content: "\29";
+// }
+// .icon-apple:before {
+//     content: "\2a";
+// }
+// .icon-envelope:before {
+//     content: "\2b";
+// }
+
+
+.icon-arrow:after {
+	content: "\61";
+	display: inline-block;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.icon-play:before {
+	font-size: 0.7rem;
+	padding-left: 0.2em;
+}
+
+.icon-play-box {
+	display: block;
+	margin-left: $pad-double;
+}
+
+.icon-play-box:before {
+	padding: $pad-quarter;
+	background: $gray;
+	color: $white;
+	margin-left: -1.7rem;
+	margin-right: $pad-half;
+}
+
+.icons li {
+  font-size: 72px;
+}

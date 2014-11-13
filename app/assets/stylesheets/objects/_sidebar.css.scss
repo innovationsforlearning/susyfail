@@ -1,0 +1,85 @@
+// @import "global";
+
+.sidebar {
+  @include span(1 of 12 no-gutters);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid $wf-gray-light;
+  padding: 0;
+  text-align: center;
+  background: $sidebar-bg;
+  @include border-radius(16px 0 0 16px);
+
+  @include ie {
+    position: absolute;
+  }
+
+  h4 {
+    @extend %epsilon;
+    padding: 3% 0;
+  }
+
+  a {
+    display: block;
+    padding: 10% 0;
+    color: $sidebar-text;
+  }
+
+  img {
+    height: auto;
+    margin: 0 auto;
+    width: 35px;
+  }
+
+  i {
+    display: block;
+    font-size: 49px;
+    font-style: normal;
+    height: auto;
+    line-height: 1.2;
+    text-align: center;
+
+    &:hover,
+    &.selected {
+      color: $sidebar-hover;
+    }
+
+    span {
+      @extend %zeta;
+      display: block;
+      font-family: $font-secondary;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.sidebar-nav {
+  padding: 4% 0;
+}
+
+.sidebar-end-session {
+  border-bottom: 1px solid $wf-gray-light;
+  padding: 4% 0;
+  width: 100%;
+
+  i span {
+    @extend %delta;
+  }  
+}
+
+.sidebar-overlay {
+  @extend .sidebar;
+  background: transparent;
+
+  i {
+    padding: 10% 0;
+    color: $med-gray;
+
+    &:hover {
+      color: $med-gray;
+    }
+  }
+
+}

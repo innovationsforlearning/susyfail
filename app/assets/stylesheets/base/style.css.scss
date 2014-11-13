@@ -1,0 +1,282 @@
+// @import "global";
+
+// .wrapper {
+//   margin: 0 auto;
+//   width: 100%;
+// }
+
+// .environment-indicator {
+//   color: $white;
+//   display: none;
+//   font-family: $font-secondary;
+//   height: 50px;
+//   left: 0;
+//   line-height: 50px;
+//   position: fixed;
+//   text-align: center;
+//   text-transform: uppercase;
+//   top: 0px;
+//   width: 50px;
+// }
+
+// .development .environment-indicator {
+//   background-color: #008000;
+//   display: block;
+// }
+
+// .staging .environment-indicator {
+//   background-color: purple;
+//   display: block;
+// }
+
+// .production .environment-indicator {
+//   background-color: $red;
+//   display: block;
+// }
+
+/*
+ * Tic Tac Toe, app/assets/stylesheets/style.css
+ */
+
+// #tic-tac-toe {
+
+//   .wrapper {
+//     margin: 0 auto;
+//     width: 50%;
+//     min-width: 415px;
+//     text-align: center;
+//   }
+
+//   table {
+//     margin: 3% auto;
+//   }
+
+//   button {
+//     margin: 2% 0;
+//   }
+
+//   td {
+//     background-color: #e0e0e0;
+//     height: 150px;
+//     width: 150px;
+//     border: 5px #ffffff solid;
+//   }
+
+//   .neutral {
+//     background-image: url('http://placehold.it/150X150/e0e0e0&text=.')
+//   }
+
+//   .ex {
+//     background-image: url('http://placehold.it/150X150/ee6f35&text=X')
+//   }
+
+//   .oh {
+//     background-image: url('http://placehold.it/150X150/79c380&text=O')
+//   }
+// }
+
+/*
+ * MysteryWord, app/assets/stylesheets/style.css
+ */
+
+#mystery-word {
+
+  // .col {
+  //  float: left;
+  //  width: 50%;
+  // }
+
+  // .row {
+  //   overflow: auto;
+  //   clear: both;
+  //   margin: 0 0 40px 0;
+  //   width: 100%;
+  // }
+
+
+
+  .alphabet {
+    // background-color: blue;
+    // padding: 10px;
+    // height: 100px;
+    // width: 200px;
+
+    div {
+      // font-family: sans-serif;
+      // font-size: 1.2em;
+      // color: white;
+      // display: inline;
+      // height: 20px;
+      // width: 20px;
+
+      &.on {
+        color: red;
+      }
+
+      &.off {
+        // color: white;
+      }
+    }
+  }
+
+
+
+  .letters {
+    clear: both;
+
+
+  }
+
+
+  .log {
+   clear: both;
+  }
+}
+
+.letter-count {
+
+
+}
+
+
+/*
+ * Stories, app/assets/stylesheets/style.css
+ */
+
+// #stories {
+
+//   .row {
+//     clear: both;
+//   }
+
+//   .hidden {
+//     display: none;
+//   }
+
+//   .story-book {
+
+//     .story-page {
+//       display: none;
+
+//       &.active {
+//         display: block;
+//       }
+
+//       .page-number {
+//         float: left;
+//       }
+
+//       .page-image {
+//         float: left;
+//       }
+
+//       .page-content {
+//         float: left;
+//       }
+//     }
+//   }
+// }
+
+/*
+ * Flashcard, app/assets/stylesheets/style.css
+ */
+
+
+
+/*
+ * Tutor Events (Schedule)
+ */
+
+body.tutor_events {
+  // background-color: #ffffff;
+  // font-family: helvetica;
+
+  #event-types {
+
+    li {
+      // background-color: blue;
+      // color: #ffffff;
+      // display: inline;
+      // padding: 10px 20px 10px 0;
+
+      &.selected {
+        // background-color: #ffffff;
+        // color: #000000;
+      }
+    }
+  }
+
+  .header {
+    // background-color: blue;
+    // border: 1px solid blue;
+    // color: yellow;
+    // padding: 5px 5px 5px 5px;
+    // text-align: center;
+    // text-transform: uppercase;
+    // width: 125px;
+  }
+
+  .slot {
+
+
+  }
+
+  #times {
+
+   .slot {
+
+   }
+  }
+
+  .day {
+   float: left;
+  }
+
+  .self.recurring {
+   font-size: 0.7em;
+  }
+
+  .self.makeup {
+   font-size: 0.7em;
+  }
+}
+
+/*
+ * Teacher Portal - Manage Students - views/students/index.html.haml
+ */
+
+#students-index {
+
+  table {
+
+    th {
+      // color: white;
+    }
+
+    td {
+      // color: white;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+}
+
+/*
+ * Connection Test Page
+ */
+
+
+
+/*
+ *
+ */
+#whiteboard {
+
+  .whiteboard-word {
+
+  }
+}

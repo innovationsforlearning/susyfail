@@ -1,0 +1,191 @@
+// @import "global";
+
+.application {
+  header {
+    background: $black;
+    color: $white;
+    padding: 1%;
+    margin-bottom: 2%;
+  }
+
+  .main,
+  nav {
+    @include container($container);
+  }
+
+  .main {
+    margin-bottom: 4%;
+  }
+
+  nav {
+    h1 {
+      width: span(3 of 12);
+      display: inline-block;
+    }
+
+    ul {
+      width: span(8 of 12);
+      display: inline-block;
+      vertical-align: middle;
+
+      li {
+        display: inline-block;
+        margin-right: 3%;
+        vertical-align: middle;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  ul {
+
+    &.menu {
+
+      li {
+        display: inline-block;
+        margin: 0 0 0 20px;
+
+        a {
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  input#last_name {
+    width: 50%;
+  }
+
+  table {
+
+    &.sessions {
+
+      th {
+        background-color: $dark_gray;
+        color: $white;
+      }
+    }
+  }
+
+  table {
+    a.portal {
+      color: $red;
+    }
+
+    a.tutoring {
+      color: $blue;
+    }
+  }
+
+  .search_results {
+    margin: 30px 0 0 0;
+  }
+
+  .loader-image {
+    background-color: #000000;
+    background-image: image-url("loading.gif");
+    height: 50px;
+    width: 50px;
+  }
+
+  .staff-list {
+    @include container($container);
+
+    li {
+      @include gallery(1 of 3);
+    }
+  }
+
+
+  li {
+    margin: 0 0 2%;
+    padding: 1% 0;
+    @include break;
+
+    &.selected {
+      background-color: gray;
+      color: $white;
+      padding: 1% 2%;
+      margin: 0 -2% 2%;
+    }
+
+    a {
+      color: red;
+      padding: 0 0 15px 0;
+    }
+  }
+}
+
+.add-new-form {
+  fieldset {
+    width: 100%;
+  }
+
+  label {
+    @extend %gamma;
+  }
+
+  input[type=text] {
+    width: span(40%);
+  }
+
+  input#email {
+    width: span(80%);
+  }
+
+  div, // :not(.classroom_text_name)
+  h2 {
+    margin-bottom: 4%;
+  }
+
+  h2 {
+    @include full;
+  }
+
+  div { // :not(.classroom_text_name)
+
+    &.classroom-field {
+      border-bottom: 0;
+    }
+  }
+}
+
+.classroom_text_name, .tutor-group-text-name, .student_text_name {
+  color: $wrong-bg;
+}
+
+.inline-field {
+  display: inline-block;
+  width: 45%;
+}
+
+.staff-select-field {
+  @include break;
+
+  input[type=text] {
+    width: 70%;
+  }
+
+  button {
+    float: right;
+  }
+}
+
+a.select-classroom {
+  float: right;
+  cursor: pointer;
+}
+
+.footer-application {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 105;
+}

@@ -1,0 +1,231 @@
+// @import "global";
+
+.activity-container {
+  @include border-radius(16px);
+  @include container($container);
+  background: $white;
+  box-shadow: -4px 7px 30px 0px rgba(50, 50, 50, 0.75);
+  margin-bottom: 10%;
+  min-height: 650px;
+  position: relative;
+  z-index: 101;
+
+  &.student-container {
+    @include border-radius(0);
+    background: transparent;
+    box-shadow: none;
+    color: $white;
+  }
+}
+
+.activity-main {
+  @include span(11 at 1 of 12 no-gutters last);
+  @include clearfix;
+  min-height: 620px;
+  position: relative;
+
+  .student-container & {
+    width: 90%;
+    margin: auto;
+    float: none;
+  }
+}
+
+.activity-content {
+  @extend .row;
+  position: relative;
+
+}
+
+.activity-content-header,
+.activity-subnav {
+  @include clearfix;
+  background: $subheader-bg;
+  color: $subheader-text;
+  padding: 2% 0;
+}
+
+.activity-content-header {
+  @include border-radius(0 16px 0 0);
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+
+  a,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  a:hover,
+  button:hover {
+    color: $subheader-accent;
+  }
+
+  h1 {
+    font-family: $font;
+  }
+
+  i {
+    @include font-size(.8);
+    vertical-align: middle;
+
+    &:before {
+      @include font-size(1.3);
+      vertical-align: middle;
+    }
+  }
+
+  h1 {
+    @extend %alpha;
+    padding-bottom: 1%;
+  }
+
+  .activity-nav {
+    @include span(4 of 12);
+
+    p {
+      color: $white;
+    }
+  }
+
+.activity-nav-content {
+  i,
+  button {
+    font-family: $font-secondary;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    &:before {
+      padding-right: 5px;
+    }
+  }
+
+  button {
+    @extend %unbuttoned;
+    padding: 0 0 0 0.5em;
+  }
+
+  a {
+    @include ie {
+      display: inline-block;
+      min-width: 35%;
+    }
+  }
+
+  &.schedule-nav-content {
+    @include span(8 of 12 last);
+    height: 30px;
+    line-height: 30px; //gross!
+
+    a {
+      display: inline-block;
+      margin-right: 4%;
+    }
+  }
+}
+
+  .chat,
+  .mini-notes {
+    @include span(4 of 12);
+
+    h2 {
+      float: left;
+
+      &.chat-message-clear {
+        float: right;
+        cursor: pointer;
+      }
+    }
+
+    input {
+      @include border-radius(4px);
+      border: 0;
+      min-height: 48px;
+    }
+  }
+}
+
+.activity-instructions {
+  padding: 0 100px;
+
+  h2 {
+    @extend %beta;
+    font-family: $font;
+  }
+
+  ol {
+    @include container(5);
+    @include clearfix;
+    list-style: decimal inside;
+    margin-top: 1%;
+
+    li {
+      @include span(1 of 5 no-gutters);
+      padding-right: 2%;
+    }
+  }
+}
+
+.activity-content-title {
+  @extend %delta;
+  @include full;
+  border-bottom: 1px solid $wf-gray-light;
+  padding-bottom: 1%;
+  padding-top: 2%;
+
+  .story-block & {
+    border-bottom: 0;
+  }
+}
+
+.activity-subnav {
+  border-top: 1px solid $wf-gray-light;
+  padding: 2em 2%;
+  @include clearfix;
+
+  ul {
+    li {
+      display: none;
+
+      &.selected {
+        a {
+          color: $white;
+          position: relative;
+          padding-bottom: 2.1em; // todo magic number
+
+          &:before,
+          &:after {
+            content: "";
+            display: block;
+            width: 2em; /* Let's call this our magic number... */
+            height: 2em; /* ...our notch will be half this size. We define it in ems to scale it up with the text size. */
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1em; /* Half of our magic number. */
+          }
+
+          &:after {
+            width: 0;
+            height: 0;
+            border: 1em solid; /* Half of our magic number. */
+            border-color: $subheader-bg $subheader-bg $white $subheader-bg;
+          }
+        }
+      }
+
+      &.active {
+        display: inline-block;
+        margin-right: 3%;
+
+        a:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
