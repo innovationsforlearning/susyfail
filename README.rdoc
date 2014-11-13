@@ -1,6 +1,6 @@
 == README
 
-## First of all, don't take the name of this repo to mean that I think that the fantastic grid toolkit Susy is a failure in any way. It's great, and the reason I don't want to give up on this issue. 
+=== First of all, don't take the name of this repo to mean that I think that the fantastic grid toolkit Susy is a failure in any way. It's great, and the reason I don't want to give up on this issue. 
 
 This test site is a simplified version of our project at tutormate.org; it only includes the stylesheets. I am having long compile delays in development, and have been trying to figure out how to fix the error that the combination of Sass 3.3 (or 3.4) and the sprockets-rails gem throws: 
 
