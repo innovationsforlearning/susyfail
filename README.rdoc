@@ -1,5 +1,23 @@
 == README
 
+**First of all, don't take the name of this repo to mean that I think that the fantastic grid toolkit Susy is a failure in any way. It's great, and the reason I don't want to give up on this issue. 
+
+This test site is a simplified version of our project at tutormate.org; it only includes the stylesheets. I am having long compile delays in development, and have been trying to figure out how to fix the error that the combination of Sass 3.3 (or 3.4) and the sprockets-rails gem throws: 
+
+`Warning. Error encountered while saving cache [every single one of the scss files] can't dump anonymous class #<Class:0x007fc5db23a750>`
+
+While I'm only including the stylesheets from our larger project here, I was getting this same error in a completely stripped-down site consisting of one @import-ed stylesheet and the application.css.scss manifest. The error has no impact on the working of the app; it's just something that appears when compiling in development and pre-compiling in staging/production. The problem is all about speed, and how long it is taking to use this number of stylesheets in development. 
+
+I've tried pretty much everything, save for downgrading to Sass 3.2 and Susy One. I'd rather not move backwards, if I can. 
+
+I am open to a solution that would bypass the Rails Asset Pipeline. I'm familiar with Grunt and Gulp, and could make this work if there was a way to just dismantle the compiling of styles via a task runner, but not upsetting a deployment to Heroku when needed. 
+
+Thanks all for your help!
+
+- Matt Bivins
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
